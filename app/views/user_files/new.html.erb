@@ -1,0 +1,4 @@
+<%= form_for @user_file, url: user_files_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :my_file %>
+  <%= form.submit %>
+<% end %>

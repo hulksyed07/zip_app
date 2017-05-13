@@ -1,0 +1,7 @@
+<h2>Listing all Zip FIles</h2>
+
+<%= link_to 'Add a new zip file', new_user_file_path %><br><br><br>
+
+<% @user_files.each do |user_file| %>
+	<%= link_to "#{user_file.my_file_file_name}", user_file_path(user_file)%><br>
+<% end %>	
