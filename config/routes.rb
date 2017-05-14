@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       post 'search'
     end
+    member do
+      get 'show_individual_file_content'
+    end
   end
   root to:'user_files#index'
 end

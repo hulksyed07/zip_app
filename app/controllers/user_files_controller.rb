@@ -1,7 +1,7 @@
 
 
 class UserFilesController < ApplicationController
-	before_action :set_user_file, only: [:show]
+	before_action :set_user_file, only: [:show, :show_individual_file_content]
 	
 	def new
 		@user_file = UserFile.new
@@ -43,7 +43,10 @@ class UserFilesController < ApplicationController
 	end
 
 	def show
-		# @file = Zip::File.new("./public/system/user_files/my_files/000/000/002/original").read("hello.txt")
+	end
+
+	def show_individual_file_content
+		@file_name = params[:file_name]
 	end
 
 	private
