@@ -1,5 +1,10 @@
 <h2>Listing all Zip FIles</h2>
 
+<%= form_tag search_user_files_path , method: :post do %>
+	<%= text_field_tag :search_filter %>
+	<%= submit_tag 'Search' %>
+<% end %>
+
 <%= link_to 'Add a new zip file', new_user_file_path %><br><br><br>
 
 <% @user_files.each do |user_file| %>

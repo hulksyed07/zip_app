@@ -11,6 +11,16 @@ class UserFilesController < ApplicationController
 		@user_files = UserFile.all
 	end
 
+	def search
+		unless params[:search_filter].blank?
+			search_filter = params[:search_filter]
+			@user_files = UserFile.where("my_file_file_name like '%#{search_filter}%'")
+		else
+			@user_files = UserFile.all
+		end
+		render :index
+	end
+
 	def create
 		puts 'inspecting params inside controlller'
 		# puts params[:user_file][:my_file].inspect
